@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .citation {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .citation p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .btn-counter {
+    display: inline-block;
+    background-color: #ff6347;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-counter:hover {
+    background-color: #ee3124;
+  }
+  
+  .btn-counter span {
+    margin-left: 10px;
+  }

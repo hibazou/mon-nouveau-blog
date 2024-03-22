@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par thèmes</title>
+    <style>
+
+        /* Add some basic styles to the page */
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+
+            background-image: url('https://media.istockphoto.com/id/1312429048/fr/photo/plan-rapproch%C3%A9-des-confettis.jpg?s=612x612&w=0&k=20&c=mq0_pHrJNcJSdyViiao6aCuM_Ab2RYNPbEzrHk0eHiw=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+         }
+        .citation {
+            background-color:  #f5eef8 ;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .citation h3 {
+            color:
+            #16a085
+ ;
+            font-family: 'Akaya Telivigala';
+            font-style: italic; 
+        margin-top: 0;
+        }
+        .citation p {
+            margin-bottom: 5px;
+            font-family: Georgia, serif; }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    {% for citation in citations %}
+    <div class="citation">
+
+        <h3>{{ citation.thèmes }}</h3>
+        <p>{{ citation.texte }}</p>
+        <p> {{ citation.auteur }}</p>
+
+    </div>
+    {% endfor %}
+
+
+</div>
+<footer>
+    <p>
+     &copy;  2024 une Pause une Citation
+    </p>
+</footer>
+</body>
+
+
+
+</html>

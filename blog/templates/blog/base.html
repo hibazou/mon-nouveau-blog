@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="blog">
     <meta name="author" content="hiba">
-    <link rel="icon" href="{%static 'icon/favicon.ico'%}">
+    <link rel="icon" href="{% static 'icons/favicon.ico'%}">
 
     <title>une Pause, une Citation</title>
 
@@ -46,18 +46,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand">Une pause, une Citation</a>
+              <a class="navbar-brand">une Pause, une Citation</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projet<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Concept</a></li>
-                    <li><a href="#">Méthodologie de Scraping</a></li>
-                    <li><a href="#">Design et Interface</a></li>
-                    <li><a href="#">Conclusion</a></li>
+                    <li><a href="{% url 'methodo' %}">Méthodologie de Scraping</a></li>
                   </ul>
                 </li>
               </ul>
@@ -82,13 +78,13 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Citation du jour</h1>
-              <p>父の恩は山よりも高く 母の恩は海よりも深し</p>
+              <p>"父の恩は山よりも高く 母の恩は海よりも深し"</p>
               <p>"Il n'y a pas de meilleur miroir qu'un véritable ami"</p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="https://cdn.pixabay.com/photo/2022/09/06/23/42/heart-7437643_1280.jpg
+          <img class="second-slide" src="https://cdn.pixabay.com/photo/2015/06/23/18/21/rainbow-818976_1280.jpg
           "alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
@@ -120,14 +116,14 @@
           <img class="img-circle" src="https://cdn.pixabay.com/photo/2015/03/18/20/25/word-cloud-679935_1280.png" alt="Generic placeholder image" width="140" height="140">
           <h2>Par thèmes</h2>
           <p>Explorez les citations par plus de dix thèmes différents. </p>
-          <p><a class="btn btn-default" href="#" role="button">Explorer &raquo;</a></p>
+          <p><a class="btn btn-default" href=" {% url 'citations' %}" role="button">Explorer &raquo;</a></p>
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-6">
           <img class="img-circle" src="https://cdn.pixabay.com/photo/2020/09/30/07/48/heart-5614865_1280.png
           " alt="Generic placeholder image" width="140" height="140">
           <h2>Par likes</h2>
           <p>Découvrez les citations qui ont reçu le plus de likes ! </p>
-          <p><a class="btn btn-default" href="#" role="button">Découvrir&raquo;</a></p>
+          <p><a class="btn btn-default" href="{%url 'liker'%}"role="button">Découvrir&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
 
@@ -156,7 +152,10 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Retour en haut</a></p>
+        <p>
+          &copy; 2024 une Pause, une Citation 
+       </p>
+       <p class="pull-right"><a href="#">Retour en haut</a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -169,11 +168,12 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="{% static 'dist/js/bootstrap.min.js'%}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="{%static 'assets/js/vendor/holder.min.js'%}"></script>
+    <script src="{% static 'assets/js/vendor/holder.min.js'%}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{%static 'assets/js/ie10-viewport-bug-workaround.js'%}"></script>
+    <script src="{% static 'assets/js/ie10-viewport-bug-workaround.js'%}"></script>
   </body>
 </html>
+
 
 
 

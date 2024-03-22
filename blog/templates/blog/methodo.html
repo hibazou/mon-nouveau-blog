@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthodologie de Scraping</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #eaeded;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background-color: #e8f8f5;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #000000;
+            font-family: 'Impact';        }
+        h2 {
+            color: #000000;
+            font-family: 'Impact';
+            font-style: italic; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Méthodologie de Scraping</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Lien entre site et Code</h2>
+            <a href="https://ibb.co/XJjVBVq"><img src="https://i.ibb.co/cTkx5xj/test.png" alt="test"></a>            
+            <a href="https://ibb.co/w4hbCKX"><img src="https://i.ibb.co/89gR2jp/class.png" alt="class"/></a>
+        </section>
+        <section>
+            <h2>Création d'une application "quotes"</h2>
+              <a href="https://ibb.co/dbw7C9q"><img src="https://i.ibb.co/3f9k6Xq/import.png" alt="import"></a>
+              <a href="https://ibb.co/7gcHw2N"><img src="https://i.ibb.co/ZHs3nW1/app.png" alt="app"></a>
+            <div class="text-container">
+              <pre>
+                python manage.py startapp quotes
+                python manage.py runscript quote.import_data -v3
+              </pre>
+            </div>
+          </section>
+    </main>
+    <footer>
+        <p>
+         &copy;  2024 une Pause une Citation
+        </p>
+    </footer>
+</body>
+</html>

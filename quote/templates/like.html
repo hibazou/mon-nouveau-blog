@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+        body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        }
+        .container {
+            background-image: url('https://img.freepik.com/free-photo/dark-concrete-textured-wall_24836-81.jpg?size=626&ext=jpg&ga=GA1.1.609100362.1711056003&semt=ais');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+         }
+      .citation h4 {
+        color:
+        #fbfcfc;
+        font-family: 'folksbold';
+        margin-top: 15px;
+      }
+      .citation h5 {
+        color:
+        #fbfcfc;
+        font-family: 'Arial';
+        font-style: italic; 
+      margin-top: 10;
+      }
+      .citation a.btn.btn-counter {
+          background-color: #f71c1c;
+          color: white;
+          padding: 5px;
+          text-decoration: none;
+          border-radius: 5px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-left: 20px;
+        }
+        .citation a.btn.btn-counter span {
+          font-size: 20px;
+          line-height: 20px;
+          padding-right: 2px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          margin-left: 2px;
+
+        }
+
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    {% for citation in citations %}
+    <div class="citation">
+      <h4>{{ citation.texte }}</h4>
+      <h5> {{ citation.auteur }}</h5>
+      <a href="#" title="Love it" class="btn btn-counter multiple-count" data-id="{{ citation.id }}" data-count="{{ citation.love_count }}"><span>{{ citation.love_count }}&#x2764;</span></a>
+    </div>
+    {% endfor %}
+  </div>
+
+
+    <script>
+      $(document).ready(function () {
+        $(".btn-counter").on("click", function () {
+          var id = $(this).data("id");
+          var count = $(this).data("count");
+          count++;
+          $(this).data("count", count);
+          $(this).find("span").text(count);
+
+          $.ajax({
+            url: "/like/",
+            type: "POST",
+            data: { id: id },
+            success: function (response) {
+              console.log(response);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+  <footer>
+    <p>
+     &copy;  2024 une Pause une Citation
+    </p>
+</footer>
+</html>
